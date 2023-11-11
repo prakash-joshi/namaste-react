@@ -15,3 +15,15 @@ A Repository to store all the learnings of my Namaste React Course
     - key attribute needed to every component to uniquely identify the component while rendering.
     - if no key attirbute then React is unable to identify the component and will try to re-render the components again in the process rerendering everything, adding key attribute will optimize the app.
     - unique key (best) >>>>>> index key (ok but not recommended) >>>>>> no key (bad practise).
+
+# Ep 5
+- Named export and Default export
+- Import with and without {} difference
+- try using both named and default export on a component
+- Hooks
+    -  useState
+        - Used to manage state within the function components.
+        - recommended way to declare or manipulate the value of a state varable in a function component.
+        - Whenever a state varaible updates React rerenders the component
+- React fiber & Reconciliation Algorithm 
+    - read this blog for more info https://github.com/acdlite/react-fiber-architecture

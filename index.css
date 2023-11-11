@@ -51,3 +51,8 @@
     display: block;
     mix-blend-mode: multiply;
 }
+
+.filter-btn {
+    margin: 15px;
+    cursor: pointer;
+}
