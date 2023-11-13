@@ -1,10 +1,11 @@
 import RestaurantCard from "./RestaurantCard";
-import { resList } from "../utils/mockData"
+// import { resList } from "../utils/mockData"
 import { useEffect, useState } from "react";
+import Shimmer from "./Shimmer";
 
 const Body = () => {
 
-    const [listOfRestaurant, setListOfRestaurant] = useState(resList);
+    const [listOfRestaurant, setListOfRestaurant] = useState([]);
     const filterTopRestaurants = listOfRestaurant.filter(res => res.info.avgRating >= 4);
 
     useEffect(() => {
@@ -21,11 +22,16 @@ const Body = () => {
         <div className="body">
             <div className="search">Search</div>
             <button className="filter-btn" onClick={() => { setListOfRestaurant(filterTopRestaurants) }}> Top Rated </button>
-            <div className="res-container">
-                {
-                    listOfRestaurant.map(restaurant => <RestaurantCard key={restaurant.info.id} resData={restaurant.info} />)
-                }
-            </div>
+            {
+                listOfRestaurant.length === 0 ?
+                    <Shimmer />
+                    :
+                    <div className="res-container">
+                        {
+                            listOfRestaurant.map(restaurant => <RestaurantCard key={restaurant.info.id} resData={restaurant.info} />)
+                        }
+                    </div>
+            }
         </div>)
 };
 
