@@ -3,7 +3,6 @@
 A Repository to store all the learnings of my Namaste React Course
 
 # Ep 4 : Create a food Ordering App
-
 - Create a seperate components for every element.
 - Config driven architecture/developemnt for UI.
     - The UI is controlled on the basis of data for different audience/locations.
@@ -27,3 +26,12 @@ A Repository to store all the learnings of my Namaste React Course
         - Whenever a state varaible updates React rerenders the component
 - React fiber & Reconciliation Algorithm 
     - read this blog for more info https://github.com/acdlite/react-fiber-architecture
+
+# Ep 6
+- useEffect Hook
+    - it takes 2 arguments a callback function and a dependency array
+    - the useEffect hook is executed after the UI is rendered ie. every thing within the function componenet will be executed and only then the useEffect Hook will be excuted (something similar to a settimout function which will not execute until the call stack is empty).
+    - if there is any other function being called after the useEffect before return that part is still executed ex. useEffect(()=>{},[]); console.log("logging"); return(); here the useEffect will be skipped console.log will execute then return and the code will be rendered and the the useEffect will be executed and if it changes the state of any variables then a reconciliation cycle is triggered (to rerender the component).
+    - 
+- Optional chaining of the api data if the data returned is null or undefined. (eg : json?.data)
+
