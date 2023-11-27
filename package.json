@@ -2,7 +2,6 @@
   "name": "namaste-react",
   "version": "1.0.0",
   "description": "A Repository to store all  the learnings of my Namaste React Course",
-  "main": "App.js",
   "scripts": {
     "start": "parcel index.html --open",
     "build": "parcel build index.html",
@@ -13,7 +12,9 @@
   "license": "ISC",
   "devDependencies": {
     "parcel": "^2.10.2",
-    "process": "^0.11.10"
+    "postcss": "^8.4.31",
+    "process": "^0.11.10",
+    "tailwindcss": "^3.3.5"
   },
   "dependencies": {
     "react": "^18.2.0",
