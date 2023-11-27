@@ -93,3 +93,20 @@ Reference diagram link : https://projects.wojtekmaj.pl/react-lifecycle-methods-d
         - Parent ComponentDidMount
     - componentDidUpdate() : is invoked immediately after updating occurs
     - componenetWillUnmount() : is invoked immediately before a component is unmounted and destroyed (eg routing to different page/component)
+
+# Ep 9
+
+- Custom Hooks: it allows developers to encapsulate and reuse logic within functional components.
+    - We can create hooks of our own for logic which is reusable in the application.
+    - create a separate file for every custom hook for better maintaianability of the code
+    - according to convention while naming a hook always starts with the word use eg: useErrorLogging();
+    
+- Chunking : also known with other names like Lazy loading/Code Splitting/Dynamic Bundling/OnDemand Loading/Dynamic Import :
+    - When the code is bundled by the package manager it gets compressed into a single JS file. 
+    - When the code size increases the size of the file increases and this can make the app slow. 
+    - We can instead created multiple smaller files which can be later loaded on demand whenever required thus reducing the size of the main js bundled file. 
+    - The app can be split into multiple modules and we can create the bundle of each module separately so that they can be called later seperately whenever required. eg: on makemytrip seperate module for flights booking, hotel bookings, bus booking, cab booking etc. 
+    - React gives us lazy() method to enable lazy loading of the code which will in turn help creating seperate smaller bundles and calling them whenwver required.
+    - We use <Suspense> tag in routing along with lazy() method to show some dummy data or loading screen or shimmer ui till the files is imported/downloaded to be rendered.
+    - The <Suspense fallback={JSX here}> tag has a fallback argument which will take JSX code for a loading screen till the actual UI is rendered
+    
