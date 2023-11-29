@@ -1,4 +1,4 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, { withPromotedCard } from "./RestaurantCard";
 // import { resList } from "../utils/mockData"
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
@@ -11,6 +11,8 @@ const Body = () => {
     const [listOfRestaurant, setListOfRestaurant] = useState([]);
     const [filteredRestaurant, setFilteredRestaurant] = useState([])
     const [searchText, setSearchText] = useState("");
+
+    const PromotedRestaurantCard = withPromotedCard(RestaurantCard);
 
     useEffect(() => {
         fetchApiData();
@@ -31,7 +33,7 @@ const Body = () => {
 
     return (
         <div className="body">
-            <div className="flex items-center">
+            <div className="flex justify-center">
                 <div className="m-4 p-4">
                     <input type="text" className="border border-solid border-black" value={searchText}
                         onChange={(event) => {
@@ -65,11 +67,15 @@ const Body = () => {
                 listOfRestaurant.length === 0 ?
                     <Shimmer />
                     :
-                    <div className="flex flex-wrap just">
+                    <div className="flex flex-wrap justify-center">
                         {filteredRestaurant.map(restaurant => {
                             return (
                                 <Link to={"/restaurant/" + restaurant.info.id} key={restaurant.info.id}>
-                                    <RestaurantCard resData={restaurant.info} />
+                                    {restaurant.info.avgRatingString < 4 ?
+                                        <PromotedRestaurantCard resData={restaurant.info}/>
+                                        :
+                                        <RestaurantCard resData={restaurant.info} />
+                                    }
                                 </Link>
                             )
                         })}
