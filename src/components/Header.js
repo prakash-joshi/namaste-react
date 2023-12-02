@@ -16,19 +16,19 @@ const Header = () => {
                     <li className="px-5">
                         Online Status : {onlineStatus ? "✅" : "🔴"}
                     </li>
-                     <li className="px-5">
+                    <li className="px-5">
                         <Link to='/'> Home </Link>
                     </li>
-                     <li className="px-5">
+                    <li className="px-5">
                         <Link to='/about'> About </Link>
                     </li>
-                     <li className="px-5">
+                    <li className="px-5">
                         <Link to='/contact'> Contact Us </Link>
                     </li>
-                     <li className="px-5">
+                    <li className="px-5">
                         Cart
                     </li>
-                    <button className="px-4 py-1 bg-gray-100 rounded-lg"
+                    <button className="px-4 py-1 bg-gray-100  hover:bg-gray-200 rounded-lg"
                         onClick={() => {
                             loginBtn === "Login" ? setLoginBtn("Logout") : setLoginBtn("Login");
                         }}
