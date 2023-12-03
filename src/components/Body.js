@@ -3,7 +3,7 @@ import RestaurantCard, { withPromotedCard } from "./RestaurantCard";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
-import { RESTAURANTLIST_API } from "../utils/constants";
+import { RESTAURANTLIST_API, CORS_PROXY } from "../utils/constants";
 import useShowOnlineStatus from "../utils/useShowOnlineStatus";
 
 const Body = () => {
@@ -19,7 +19,7 @@ const Body = () => {
     }, [])
 
     const fetchApiData = async () => {
-        const apiData = await fetch(RESTAURANTLIST_API);
+        const apiData = await fetch(CORS_PROXY + RESTAURANTLIST_API);
         const apiJson = await apiData.json();
         setListOfRestaurant(apiJson.data?.cards[5]?.card.card.gridElements?.infoWithStyle?.restaurants);
         setFilteredRestaurant(apiJson.data?.cards[5]?.card.card.gridElements?.infoWithStyle?.restaurants);
@@ -72,7 +72,7 @@ const Body = () => {
                             return (
                                 <Link to={"/restaurant/" + restaurant.info.id} key={restaurant.info.id}>
                                     {restaurant.info.avgRatingString < 4 ?
-                                        <PromotedRestaurantCard resData={restaurant.info}/>
+                                        <PromotedRestaurantCard resData={restaurant.info} />
                                         :
                                         <RestaurantCard resData={restaurant.info} />
                                     }

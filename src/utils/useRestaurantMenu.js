@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { MENU_URL } from "../utils/constants";
+import { MENU_URL, CORS_PROXY } from "../utils/constants";
 
 const useRestaurantMenu = (resid) => {
 
@@ -10,7 +10,7 @@ const useRestaurantMenu = (resid) => {
     }, []);
 
     const fetchMenu = async () => {
-        const apiData = await fetch(MENU_URL + resid);
+        const apiData = await fetch(CORS_PROXY + MENU_URL + resid);
         const apiJson = await apiData.json();
         setResInfo(apiJson);
     }
