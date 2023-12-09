@@ -1,10 +1,13 @@
 import { useState } from "react";
 import ItemList from "./ItemList";
 
-const Itemcategory = ({ data }) => {
-    const [showItems, setShowItems] = useState(false);
+const Itemcategory = ({ data, showItemIndex, setShowItemIndex }) => {
+
+    // const [showItems, setShowItems] = useState(false);
+
     const handleClick = () => {
-        setShowItems(!showItems);
+        // setShowItems(!showItems);
+        setShowItemIndex();
     }
     return (
         <div>
@@ -13,7 +16,7 @@ const Itemcategory = ({ data }) => {
                     <span className="font-bold text-lg">{data.title} ({data.itemCards.length})</span>
                     <span>⬇️</span>
                 </div>
-                {showItems && <ItemList items={data.itemCards} />}
+                {showItemIndex && <ItemList items={data.itemCards} />}
             </div>
         </div>
     )
