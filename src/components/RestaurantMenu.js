@@ -9,6 +9,13 @@ const RestaurantMenu = () => {
     const { resid } = useParams();
     const resInfo = useRestaurantMenu(resid);
     const [showItemIndex, setShowItemIndex] = useState();
+    const openCloseAccordian = (index) => {
+        if (showItemIndex === index) {
+            setShowItemIndex();
+        } else {
+            setShowItemIndex(index);
+        }
+    }
 
     if (resInfo === null) { return <Shimmer />; }
 
@@ -27,7 +34,7 @@ const RestaurantMenu = () => {
                     key={category.card.card.title}
                     data={category.card?.card}
                     showItemIndex={index === showItemIndex ? true : false}
-                    setShowItemIndex={() => setShowItemIndex(index)}
+                    setShowItemIndex={() => openCloseAccordian(index)}
                 />
             ))}
         </div >
