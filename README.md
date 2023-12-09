@@ -116,4 +116,25 @@ Reference diagram link : https://projects.wojtekmaj.pl/react-lifecycle-methods-d
 - CSS most trending framework: tailwindcss
 - Tailwindcss installation guide : https://tailwindcss.com
 
+# Ep 11
 
+- Higher Order Components takes a component as an argument and returns a new component that wraps the original component
+- Pure components / Pure Functions : a function (a block of code) that always returns the same result if the same arguments are passed
+- Lifting the state :
+  - if there is a child component which is repeated and each component has its own state we can share the state by lifing it up to its closest parent and avoid implementing the state in child component
+  - eg: accordians where only one accordian can be open at a time here insted of each accordin tile having its state for open or closed we can lift the state to the parent and control the child to have only one or multiple accordians expanded from the parent
+- Controlled and uncontrolled compoenent
+  - Controlled Component :
+    - when the component is driven by the props rather than its own local state.
+    - this lets the parent component fully specify its behaviour.
+    - these are most flexible but we need to properly configure the props to be passed
+  - Uncontrolled Component :
+    - when the local state of the component drives the component.
+    - this component is not influenced by its parents state or props.
+    - these are less flexible but less complex to configure
+- Context Api:
+  - it provides a way to pass data through the component tree without having to pass props down manually at every level.
+  - it  is designed to share data that can be considered “global” for a tree of React components, such as the current authenticated user, theme, or preferred language.
+  - createContext({object}) lets you create a context that components can provide or read. it takes an object as an input parameter which you can use anywhere in the application.
+  - useContext(SomeContext) is a react hook which lets you read and subscribe to the context from a component.
+  - we can have multiple context created and they can be read & updated from anywhere in the application. 
