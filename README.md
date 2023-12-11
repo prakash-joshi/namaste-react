@@ -157,3 +157,16 @@ Reference diagram link : https://projects.wojtekmaj.pl/react-lifecycle-methods-d
   - Redux Thunks earlier used while making api requests
   - RTK Query : is a powerful data fetching and caching tool. It is designed to simplify common cases for loading data in a web application, eliminating the need to hand-write data fetching & caching logic yourself.
   - RTK Query document : https://redux-toolkit.js.org/rtk-query/overview
+
+# Ep 13
+
+- Different types of testing for developer:
+  - Unit Testing : Focuses on indivdual unit (components) to determine wether they are ft to use or not.
+  - Integration Testing : Focuses on verifying interaction or data exchange between different component
+  - End to End Testing (e2e testing) : Tests entire application flow from start to finish, needs special tools to perform this test
+- React Testing library : https://testing-library.com/docs/react-testing-library/intro/
+  - Most popular for testing react applications.
+  - Build as a wrapper on DOM Testing Library by adding API for react components.
+- Jest : https://jestjs.io/
+  - Most widely used JS framewok for writing test cases.
+  - Works with React, Vue, Angular, Vanilla JS or Typescript, Babael, NodeJS
