@@ -133,8 +133,27 @@ Reference diagram link : https://projects.wojtekmaj.pl/react-lifecycle-methods-d
     - this component is not influenced by its parents state or props.
     - these are less flexible but less complex to configure
 - Context Api:
+
   - it provides a way to pass data through the component tree without having to pass props down manually at every level.
-  - it  is designed to share data that can be considered “global” for a tree of React components, such as the current authenticated user, theme, or preferred language.
+  - it is designed to share data that can be considered “global” for a tree of React components, such as the current authenticated user, theme, or preferred language.
   - createContext({object}) lets you create a context that components can provide or read. it takes an object as an input parameter which you can use anywhere in the application.
   - useContext(SomeContext) is a react hook which lets you read and subscribe to the context from a component.
-  - we can have multiple context created and they can be read & updated from anywhere in the application. 
+  - we can have multiple context created and they can be read & updated from anywhere in the application.
+
+# Ep 12
+
+- Redux Toolkit
+
+  - Redux Toolkit (RTK) : https://redux-toolkit.js.org/
+
+  - store is a central big JS Object where most of the data is stored
+  - to avoid the store from becoming very big and clumsy we can split it into parts known as slices which is a small portion of the store and we can create multiple slices in our redux store
+  - in our application the various slices which we can create are loggedin User data, cart data, payment options data, Ui or theme slice
+  - we cannot directly modify/update our slice instead we have to dispatch an action which calls a function which inturn updates the slice
+  - to read the data from the store we use selectors which can then be displayed/used and this proccess is called subscribing to the store.
+  - useSelctor() : Allows us to extract data from the Redux store state for use in this component, using a selector function
+  - useDispatch() : This hook returns a reference to the dispatch function from the Redux store. We may use it to dispatch actions as needed.
+  - dispatch(action) : Dispatches an action. This is the only way to trigger a state change.
+  - Redux Thunks earlier used while making api requests
+  - RTK Query : is a powerful data fetching and caching tool. It is designed to simplify common cases for loading data in a web application, eliminating the need to hand-write data fetching & caching logic yourself.
+  - RTK Query document : https://redux-toolkit.js.org/rtk-query/overview
