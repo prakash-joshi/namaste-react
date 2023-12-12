@@ -170,3 +170,5 @@ Reference diagram link : https://projects.wojtekmaj.pl/react-lifecycle-methods-d
 - Jest : https://jestjs.io/
   - Most widely used JS framewok for writing test cases.
   - Works with React, Vue, Angular, Vanilla JS or Typescript, Babael, NodeJS
+  - initate jest to create jest.config.js file : npx jest --init
+  - install jest-environment-jsdom 
