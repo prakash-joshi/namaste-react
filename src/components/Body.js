@@ -21,8 +21,8 @@ const Body = () => {
     const fetchApiData = async () => {
         const apiData = await fetch(CORS_PROXY + RESTAURANTLIST_API);
         const apiJson = await apiData.json();
-        setListOfRestaurant(apiJson.data?.cards[5]?.card.card.gridElements?.infoWithStyle?.restaurants);
-        setFilteredRestaurant(apiJson.data?.cards[5]?.card.card.gridElements?.infoWithStyle?.restaurants);
+        setListOfRestaurant(apiJson.data?.cards[4]?.card.card.gridElements?.infoWithStyle?.restaurants);
+        setFilteredRestaurant(apiJson.data?.cards[4]?.card.card.gridElements?.infoWithStyle?.restaurants);
     }
 
     const onlineStatus = useShowOnlineStatus();
