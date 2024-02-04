@@ -8,7 +8,7 @@ import { useSelector } from "react-redux";
 const Header = () => {
     const [loginBtn, setLoginBtn] = useState('Login')
     const onlineStatus = useShowOnlineStatus();
-    const { loggedInUser } = useContext(UserContext);
+    // const { loggedInUser } = useContext(UserContext);
 
     const cartItems = useSelector(store => store.cart.items)
 
@@ -41,7 +41,7 @@ const Header = () => {
                             loginBtn === "Login" ? setLoginBtn("Logout") : setLoginBtn("Login");
                         }}
                     >
-                        {loginBtn} - {loggedInUser}
+                        {loginBtn}
                     </button>
                 </ul>
             </div>
