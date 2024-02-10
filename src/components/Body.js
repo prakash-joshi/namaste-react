@@ -36,7 +36,7 @@ const Body = () => {
         <div className="body">
             <div className="flex justify-center">
                 <div className="m-4 p-4">
-                    <input type="text" className="border border-solid border-black" value={searchText}
+                    <input type="text" data-testid="searchRestaurants" className="border border-solid border-black" value={searchText}
                         onChange={(event) => {
                             setSearchText(event.target.value)
                         }}
