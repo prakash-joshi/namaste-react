@@ -1,0 +1,65 @@
+{
+    "id": "93237",
+    "name": "Wow! Momo",
+    "cloudinaryImageId": "5a148e63e9c54942e37627da1aa156be",
+    "locality": "Malleshwaram",
+    "areaName": "Malleshwaram",
+    "costForTwo": "₹250 for two",
+    "cuisines": [
+        "Tibetan",
+        "Healthy Food",
+        "Asian",
+        "Chinese",
+        "Snacks",
+        "Continental",
+        "Desserts",
+        "Beverages"
+    ],
+    "avgRating": 4.8,
+    "parentId": "1776",
+    "avgRatingString": "4.1",
+    "totalRatingsString": "1K+",
+    "sla": {
+        "deliveryTime": 44,
+        "lastMileTravel": 3.7,
+        "serviceability": "SERVICEABLE",
+        "slaString": "40-45 mins",
+        "lastMileTravelString": "3.7 km",
+        "iconType": "ICON_TYPE_EMPTY"
+    },
+    "availability": {
+        "nextCloseTime": "2024-02-10 22:00:00",
+        "opened": true
+    },
+    "badges": {},
+    "isOpen": true,
+    "type": "F",
+    "badgesV2": {
+        "entityBadges": {
+            "imageBased": {},
+            "textBased": {},
+            "textExtendedBadges": {}
+        }
+    },
+    "aggregatedDiscountInfoV3": {
+        "header": "60% OFF",
+        "subHeader": "UPTO ₹120"
+    },
+    "orderabilityCommunication": {
+        "title": {},
+        "subTitle": {},
+        "message": {},
+        "customIcon": {}
+    },
+    "differentiatedUi": {
+        "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+        "differentiatedUiMediaDetails": {
+            "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+            "lottie": {},
+            "video": {}
+        }
+    },
+    "reviewsSummary": {},
+    "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+    "restaurantOfferPresentationInfo": {}
+}
