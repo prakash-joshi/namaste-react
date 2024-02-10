@@ -11,6 +11,7 @@ const Body = () => {
     const [listOfRestaurant, setListOfRestaurant] = useState([]);
     const [filteredRestaurant, setFilteredRestaurant] = useState([])
     const [searchText, setSearchText] = useState("");
+    const [topRestaurantFilter, setTopRestaurantFilter] = useState(false);
 
     const PromotedRestaurantCard = withPromotedCard(RestaurantCard);
 
@@ -54,8 +55,13 @@ const Body = () => {
 
                     <button className="px-4 py-1 bg-gray-100  hover:bg-gray-200 rounded-lg"
                         onClick={() => {
-                            const filterTopRestaurants = listOfRestaurant.filter(res => res.info.avgRating >= 4);
-                            setFilteredRestaurant(filterTopRestaurants)
+                            if (!topRestaurantFilter) {
+                                const filterTopRestaurants = listOfRestaurant.filter(res => res.info.avgRating >= 4.5);
+                                setFilteredRestaurant(filterTopRestaurants);
+                            } else {
+                                setFilteredRestaurant(listOfRestaurant);
+                            }
+                            setTopRestaurantFilter(!topRestaurantFilter);
                         }}
                     >
                         Top Rated
