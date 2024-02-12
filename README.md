@@ -172,3 +172,25 @@ Reference diagram link : https://projects.wojtekmaj.pl/react-lifecycle-methods-d
   - Works with React, Vue, Angular, Vanilla JS or Typescript, Babael, NodeJS
   - initate jest to create jest.config.js file : npx jest --init
   - install jest-environment-jsdom 
+  - install @babel/preset-react to make JSX work in test cases.
+  - include @babel/preset-react inside babel.config.js
+  - install @testing-library/jest-dom
+
+- testcases
+  - test cases start with test function with 2 paramters fist being the test case description and second is a callback function which consist of the test code with the assertion for success scenario.
+  - the test case description generally starts with should for better readability. eg test('should load a label Contact Us ',()=>{"test code here"}).
+  - test() function can also be replaced with it() function both are one and the same.
+  - we can use describe() function to group multiple testcases into one. 
+  - we can also have multi level nesting of describe() function inside another descibe() function.
+  - for the components using react-redux code like useSelector or useDispatch we need to pass the store and provider and wrap the component to tesr inside the provider into the render() for the testcase.
+  - simliar to redux code for routing as well we need to warp the element to render inside the BrowserRouter elemnt to provide the routing to the testing component.
+  - we have multiple selection criteria avalable to test the render component like getByRole(), getByText(), getByPlaceholderText(), getByTestId() etc. some of these even accept regex as a paremater and soem take an extra paramter to get the element with their internal attribute values for testing.
+  - we can also simulate scenarios like click, change abort etc. events using the fireEvent function provided by the @testing-library/react
+  - for the component recieving the props we need to create the mock data and provide it as props to the component in render().
+  - for the component which has an api call using fetch() we need to fake the api call by using global.fetch = jest.fn() here we need to resolve the api call and then resolve the json as well which will provide the mock data to be used for test.
+  - for integration testing we can render multiple components inside the render() function.
+  - Startup and Teardown functions
+    - beforeAll(() => { startup function/logic here }); // executes before all testcases are executed in the describe block
+    - afterAll(() => { startup function/logic here }); // executes after all testcases are executed in the describe block
+    - beforeEach(() => { teardown function/logic here }); // executes before each testcase is executed in the describe block
+    - afterEach(() => { teardown function/logic here }); // executes after each testcase is executed in the describe block
