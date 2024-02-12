@@ -15,7 +15,7 @@ const ItemList = ({ items }) => {
             {
                 items.map(item => {
                     return (
-                        <div className="p-2 m-2 border-b-2 border-gray-200 text-left flex justify-between" key={item.card.info.id}>
+                        <div data-testid="foodItem" className="p-2 m-2 border-b-2 border-gray-200 text-left flex justify-between" key={item.card.info.id}>
                             <div className="w-9/12">
                                 <div className="py-2">
                                     <span>{item.card.info.name}</span>
