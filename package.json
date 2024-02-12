@@ -5,7 +5,8 @@
   "scripts": {
     "start": "parcel index.html --open",
     "build": "parcel build index.html",
-    "test": "jest"
+    "test": "jest",
+    "watch_test": "jest --watch"
   },
   "keywords": [],
   "author": "",
